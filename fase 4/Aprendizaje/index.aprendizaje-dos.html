@@ -13,13 +13,9 @@
 </head>
 <body>
     <header class="container-fluid bg-primary col-10">
-        <div class="row">
-            <div class="col-4">Aprendizaje</div>
-            <div class="col-4">Cuestionario</div>
-            <div class="col-4">Otros</div>
-        </div>
+      
 
-    </header>
+    
 
     <nav class="navbar navbar-expand-sm navbar-light p-lg-1 mb-2 bg-info">
       <div class="container-fluid ">
@@ -64,10 +60,76 @@
         </div>
       </div>
     </nav>
-
+  </header>
       <main class="container">
           <div class="row">
-              <section class="col-md-8"></section>
+              <section class="col-md-8">
+               <h3>CSS media queries</h3> 
+
+<p>Son la herramienta por la cual es posible cambiar el diseño o presentación de una pagina , asignando valores del tamaño de la pantalla, lo cual quiere decir que es posible cambiar el maquetado de la página dependiendo en la pantalla que la estemos mostrando, lo que hoy en día se conoce como diseño responsive. Se aplica según las dimensiones de la pantalla o según el soporte del view port.
+  Como se encuentra en la documentación en la pagina oficial de developer mozilla (MDN Web Docs, 2021)“Las media queries (en español "consultas de medios") son útiles cuando deseas modificar tu página web o aplicación en función del tipo de dispositivo (como una impresora o una pantalla) o de características y parámetros específicos (como la resolución de la pantalla o el ancho del viewport del navegador).”
+  
+  Sintaxis.
+  Su funcionalidad va de acuerdo con operadores que lógicos que restringen o abren código para que sea aplicado, de esta manera se puede jugar con el ancho de la pantalla en pixeles, o con el view port. De esta manera lo expone (MDN Web Docs, 2021) “El resultado de la consulta es "verdadero" cuando el tipo de medio (si se especifica) coincide con el dispositivo en el que se está mostrando el documento y todas las expresiones en el media query son "verdaderas". En este caso, se aplica los estilos correspondientes, siguiendo las reglas usuales de cascada.”</p>
+
+<H6>Figura 1.
+  Sintaxis en código.</H6>  
+  <P>
+    <!-- CSS media query on a link element -->
+<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+
+<!-- CSS media query within a style sheet -->
+<style>
+@media (max-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
+</style>
+Fuente: Developer Mozilla.
+  </P>
+	
+
+ <h3>Operadores Lógicos
+</h3>
+
+<p>Se pueden establecer criterios de salida con los operadores not, and , only, adicionalmente se pueden combinar varias sentencias queries separadas por comas para desarrollar operadores combinadas.
+  Veamos más documentación en (MDN Web Docs, 2021) referende a los operadores lógicos.}
+  and
+  El operador and es usado para colocar juntas múltiples funciones multimedia. Un query básico con el tipo de medio especificado como all puede lucir así:
+  @media (min-width: 700px) { ... }
+  Copy to Clipboard
+  Si usted quiere aplicar ese query solo si la pantalla esta en formato horizontal, usted puede utilizar el operador and y colocar la siguiente cadena:
+  @media (min-width: 700px) and (orientation: landscape) { ... }
+  Copy to Clipboard
+  La siguiente query solo retornara verdadero si la ventana tiene un ancho de 700px o mas y la pantalla esta en formato horizontal. Ahora si usted quiere aplicar esta opción solo si tipo de medio es TV, usted puede utilizar la siguiente cadena:
+  @media tv and (min-width: 700px) and (orientation: landscape) { ... }
+  Adicionalmente podemos ver que se pueden manejar por medio de comas para codificar un query combinado.
+  @media (min-width: 700px), handheld and (orientation: landscape) { ... }
+  En cuanto al operador not en la pantallas seria (MDN Web Docs, 2021).
+  
+  not
+  El operador not aplica a todo el query y retorna verdadero si es posible y sino retorna falso (como por ejemplo monochrome en un monitor a color o una ventana con un ancho mínimo de min-width: 700px en un monitor de 600px). Un not negara un query si es posible pero no a todos los query posibles si están ubicados en una lista separada por comas. El operador not no puede ser usado para negar un query individual, solo para un query completo. Por ejemplo, el not en el siguiente query es evaluado al final:
+  @media not all and (monochrome) { ... }
+  
+  Funciones Multimedia
+  
+  Según las funciones multimedia se puede ver la documentación en (MDN Web Docs, 2021). “La mayoría de las funciones multimedia pueden ser precedidas por "min-" o "max-" para expresar "greater or equal to" o "less than or equal to". Esto elimina la necesidad de usar los símbolos "<" y ">" los cuales podrían causar conflictos con HTML y XML. Si usted usa una función multimedia sin especificarle un valor, la expresión retornara verdadero si el valor es diferente de cero.”
+  
+  resolution
+  
+  Indica la resolución (densidad de pixeles) del dispositivo de salida. La resolución puede ser especificada en puntos por pulgada (dpi) o en puntos por centímetros (dpcm).
+  </p>
+
+<p>
+  Ejemplo
+Para aplicar una hoja de estilo a dispositivos con al menos 300 dpi de resolución:
+@media print and (min-resolution: 300dpi) { ... }
+
+</p>
+
+
+              </section>
               <aside class="col-md-4"></aside>
           </div>
       </main>
